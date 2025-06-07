@@ -17,12 +17,6 @@ print("每位病人调整后的Temperature：", temps_np + 0.5)
 # 输出：每位病人调整后的Temperature： [37.  37.6 37.3 38. ]
 ```
 
-[[docs/plugins/index|index]]
-[测试](https://porkbun.com/account/domainsSpeedy)
-[[Introduction]]
-
-
-
 # 一维数组的创建与访问 
 ```python
 # 可以把 NumPy 的一维数组看作一个“医学观察日记表”  
