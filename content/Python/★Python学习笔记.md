@@ -42,7 +42,9 @@
 # Python 库/软件包
 ## [[Jupyter]]
 ## [[NumPy]]
-
+## [[Pandas]]
+## [[Matplotlib +Seaborn（可视化基础库）]]
+##  [[Scikit-learn（专注时点结局数据的机器学习）]]
 
 
 

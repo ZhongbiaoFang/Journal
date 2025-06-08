@@ -1,4 +1,39 @@
 ![image.png](https://elvisfang.oss-cn-hangzhou.aliyuncs.com/img/202506061156178.png)
+# 数组的常用统计函数
+```python
+# 首先导入NumPy库【第一步导入(import)`numpy库`，定义`numpy`为`np`】
+import numpy as np
+```
+
+- **np.array()**
+![image.png](https://elvisfang.oss-cn-hangzhou.aliyuncs.com/img/202506061324151.png)
+``aixs = 0：按列计算
+``aixs = 1：按行计算
+```python
+# 用索引访问：data[行, 列]
+data = np.array([
+[36.6, 120, 80], # 病人1
+[37.2, 130, 85], # 病人2
+[38.0, 145, 95] # 病人3
+])
+# 计算每项指标的平均值（按列）  
+means = np.mean(data, axis=0) # aixs = 0：按列计算；aixs = 1：按行计算  
+print("每项指标的平均值（Temperature、Systolic Pressure、Diastolic Pressure）：", means)  
+# 其他常用函数：  
+print("最高Temperature：", np.max(data[:, 0]))     # Temperature最大值，[:, 0]表示第一列所有数据（即温度的值）  
+print("Systolic Pressure标准差：", np.std(data[:, 1]))  # 血压波动  
+print("Diastolic Pressure总和：", np.sum(data[:, 2]))    # 所有人Diastolic Pressure总和  
+print("患者收缩压的MEAN ± SD：", np.mean(data[:, 1]), "±", np.std(data[:, 1])) # 所有收缩压的平均值±标准差
+'''  
+每项指标的平均值（Temperature、Systolic Pressure、Diastolic Pressure）： [ 37.26666667 131.66666667  86.66666667]
+最高Temperature： 38.0
+Systolic Pressure标准差： 10.274023338281626
+Diastolic Pressure总和： 260.0
+患者收缩压的MEAN ± SD： 131.66666666666666 ± 10.274023338281626
+'''
+```
+
+
 # 数组 array 相比 list 的优势
 ![image.png](https://elvisfang.oss-cn-hangzhou.aliyuncs.com/img/202506061157829.png)
 ```python
@@ -17,7 +52,7 @@ print("每位病人调整后的Temperature：", temps_np + 0.5)
 # 输出：每位病人调整后的Temperature： [37.  37.6 37.3 38. ]
 ```
 
-# 一维数组的创建与访问 
+# 一维数组的创建与访问
 ```python
 # 可以把 NumPy 的一维数组看作一个“医学观察日记表”  
 temps = np.array([36.6, 37.2, 36.8, 37.5])  
@@ -106,62 +141,6 @@ print(adjusted)
  [ 38.5 135.   95. ]]
  '''
 ```
-
-# 数组的常用统计函数
-```python
-# 首先导入NumPy库【第一步导入(import)`numpy库`，定义`numpy`为`np`】
-import numpy as np
-```
-
-- **np.array()**
-![image.png](https://elvisfang.oss-cn-hangzhou.aliyuncs.com/img/202506061324151.png)
-``aixs = 0：按列计算
-``aixs = 1：按行计算
-```python
-# 用索引访问：data[行, 列]
-data = np.array([
-[36.6, 120, 80], # 病人1
-[37.2, 130, 85], # 病人2
-[38.0, 145, 95] # 病人3
-])
-# 计算每项指标的平均值（按列）  
-means = np.mean(data, axis=0) # aixs = 0：按列计算；aixs = 1：按行计算  
-print("每项指标的平均值（Temperature、Systolic Pressure、Diastolic Pressure）：", means)  
-# 其他常用函数：  
-print("最高Temperature：", np.max(data[:, 0]))     # Temperature最大值，[:, 0]表示第一列所有数据（即温度的值）  
-print("Systolic Pressure标准差：", np.std(data[:, 1]))  # 血压波动  
-print("Diastolic Pressure总和：", np.sum(data[:, 2]))    # 所有人Diastolic Pressure总和  
-print("患者收缩压的MEAN ± SD：", np.mean(data[:, 1]), "±", np.std(data[:, 1])) # 所有收缩压的平均值±标准差
-'''  
-每项指标的平均值（Temperature、Systolic Pressure、Diastolic Pressure）： [ 37.26666667 131.66666667  86.66666667]
-最高Temperature： 38.0
-Systolic Pressure标准差： 10.274023338281626
-Diastolic Pressure总和： 260.0
-患者收缩压的MEAN ± SD： 131.66666666666666 ± 10.274023338281626
-'''
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
